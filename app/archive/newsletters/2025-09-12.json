@@ -1,0 +1,33 @@
+{
+  "newsletters": [
+    {
+      "id": "the-fight-of-giants-for-asean-2025-09-12",
+      "slug": "the-fight-of-giants-for-asean",
+      "title": "⭐️ The Fight of Giants for ASEAN",
+      "date": "2025-09-12",
+      "summary": "ASEAN is evolving from a geopolitical buffer to a digital and supply-chain battleground. The U.S.–ASEAN Comprehensive Strategic Partnership pivots toward digital integration (DEFA), while ASEAN balances deepening ties with both China and America. Indonesia captures industrial-scale EV/metal investments, but lags in logistics and policy consistency compared to Vietnam/Malaysia.",
+      "keyDiscussion": [
+        "U.S. backs ASEAN’s Digital Economy Framework Agreement (DEFA), pushing toward a regional digital common market",
+        "ASEAN Single Window has saved over US$6.4B by digitizing customs processes—Indonesia adopting advanced modules",
+        "Record FDI flows of US$230B in 2023—but distribution favors electronics in Vietnam/Malaysia over metals in Indonesia",
+        "Indonesia’s industrial bets: BYD’s US$1B EV plant, CNGR’s battery precursor hub, Freeport’s US$3.7B smelter",
+        "Indonesia’s infrastructure & regulatory gaps hinder electronics diversification",
+        "ASEAN hedges between China (ACFTA 3.0, trade scale) and U.S. (digital, AI, standards) while preserving autonomy"
+      ],
+      "tags": [
+        "asean",
+        "trade",
+        "digital",
+        "china",
+        "us",
+        "investment",
+        "indonesia"
+      ],
+      "image": {
+        "url": "https://asean.usmission.gov/wp-content/uploads/sites/62/2022/11/315414154_622865109840456_4620235512988159703_n.jpg",
+        "alt": "The Fight of Giants for ASEAN cover"
+      },
+      "contentHtml": "<h2>ASEAN–U.S. Partnership Goes Digital</h2><p>The U.S.–ASEAN Comprehensive Strategic Partnership is no longer limited to defense and maritime security. It now drives a deeper tech and economic integration agenda via the **Digital Economy Framework Agreement (DEFA)**. Aimed for a 2025–26 launch, DEFA would merge 10 national digital markets into a regional digital common market—removing digital borders, easing data flows, and lowering digital trade costs.</p><p>Indonesia, though historically cautious on cross-border data, is starting to adopt more permissive “flows with safeguards” frameworks, and participates actively in the ASEAN Single Window (ASW), which has so far saved over **US$6.4B** in cross-border trade costs via customs digitization. Indonesia, Thailand, and the Philippines lead adoption of modules like e-Phyto. :contentReference[oaicite:0]{index=0}</p><h2>FDI & Supply Chain Shifts: Winners and Gaps</h2><p>ASEAN as a bloc pulled in **US$230B in FDI in 2023**, riding the “China+1” shift. But the allocation is uneven. Vietnam, Malaysia, and Thailand capture most electronics and semiconductor investment. :contentReference[oaicite:1]{index=1}</p><p>Indonesia is anchoring **heavy industry and EV-related mega projects** instead. Key investments include:</p><ul><li>CNGR’s US$10B battery precursor facility</li><li>BYD’s US$1B EV plant in West Java (150,000 units capacity)</li><li>Freeport’s US$3.7B copper smelter in Gresik (commissioned 2024)</li><li>Apple’s planned US$1B components/accessories facility, catalyzed by local content rules</li></ul><p>However, FDI **fell ~6.95% YoY in Q2 2025**, pointing to competition, policy drag, or investor caution. :contentReference[oaicite:2]{index=2}</p><p>Indonesia faces real constraints in logistics and supply chain assembly: it ranks 61st on the World Bank’s Logistics Performance Index, behind Vietnam (~43rd) and Thailand (~34th). :contentReference[oaicite:3]{index=3}</p><h2>ASEAN’s Diplomatic Balancing Game</h2><p>Amid U.S.–China rivalry, ASEAN’s role is shifting from neutrality to active balancing. Recent moves include:</p><ul><li>Upgrading **ACFTA 3.0** in May 2025 to include digital & green economy clauses.</li><li>Deepening tech/digital alignment with the U.S. via CSP & DEFA cooperation.</li><li>Maintaining trade scale with China (ASEAN–China trade hit ~US$234B in Q1 2025). :contentReference[oaicite:4]{index=4}</li></ul><p>ASEAN’s strength lies in hedging: some members lean Chinese, others U.S., but all under the ASEAN collective umbrella. :contentReference[oaicite:5]{index=5}</p><h2>Big Picture & Takeaways</h2><ul><li><strong>Digital regulation is the locus of power:</strong> DEFA, ASW, data flows will shape trade more than tariffs.</li><li><strong>FDI is real but segmented:</strong> Indonesia’s bet is in metals/EVs; others in electronics.</li><li><strong>Balancing is ASEAN’s strategic posture:</strong> by upgrading ACFTA and shaping CSP rules, ASEAN is actively choosing its role in great-power competition, not just responding.</li></ul><p>ASEAN is no longer the passive ground between giants—it’s shaping its own narrative. The test will be whether it can embed infrastructure, logistics, and digital rules before external powers write them for it.</p>"
+    }
+  ]
+}

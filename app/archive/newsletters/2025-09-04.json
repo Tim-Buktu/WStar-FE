@@ -1,0 +1,21 @@
+{
+  "newsletters": [
+    {
+      "id": "daily-brief-2025-09-04",
+      "slug": "daily-brief",
+      "title": "Daily Brief — Thu, 04 Sep 2025 (WIB)",
+      "date": "2025-09-04",
+      "summary": "Indonesia faces protests under President Prabowo fueled by economic frustrations...",
+      "keyDiscussion": [
+        "Protests highlight economic pain, inequality, and slow job creation",
+        "Bank Indonesia revives quasi-fiscal role via housing and cooperatives support"
+      ],
+      "tags": ["indonesia", "markets", "policy", "economy", "protests"],
+      "image": {
+        "url": "https://awsimages.detik.net.id/community/media/visual/2025/09/03/massa-aliansi-perempuan-indonesia-demo-di-depan-dpr-1756876119703_169.jpeg?w=1200",
+        "alt": "Daily Brief — Thu, 04 Sep 2025 (WIB) cover"
+      },
+      "contentHtml": "<h2>Top Lines</h2><ul><li><strong>Protests under Prabowo reflect deep economic pain</strong></li></ul>"
+    }
+  ]
+}

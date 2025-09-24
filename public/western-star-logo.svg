@@ -1,0 +1,28 @@
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orange star with swoosh -->
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6600;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main star shape -->
+  <path d="M50 20 L58 35 L75 35 L62 46 L68 62 L50 52 L32 62 L38 46 L25 35 L42 35 Z" 
+        fill="url(#orangeGradient)" 
+        stroke="#CC5500" 
+        stroke-width="1"/>
+  
+  <!-- Swoosh line -->
+  <path d="M75 40 Q120 30 180 50" 
+        stroke="url(#orangeGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Small trailing stars -->
+  <circle cx="140" cy="45" r="2" fill="url(#orangeGradient)" opacity="0.7"/>
+  <circle cx="160" cy="48" r="1.5" fill="url(#orangeGradient)" opacity="0.5"/>
+  <circle cx="175" cy="50" r="1" fill="url(#orangeGradient)" opacity="0.3"/>
+</svg>

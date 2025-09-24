@@ -1,0 +1,32 @@
+{
+  "newsletters": [
+    {
+      "id": "indonesia-regional-outlook-2025-09-11",
+      "slug": "indonesia-regional-outlook",
+      "title": "Indonesia & Regional Outlook: Trade, Budget, and Flood Disasters",
+      "date": "2025-09-11",
+      "summary": "In this edition: China presses ASEAN for CAFTA 3.0 upgrades, Indonesia’s 2026 budget is likely to shift under a new finance minister, and catastrophic floods in Bali & East Nusa Tenggara expose vulnerabilities in infrastructure and climate resilience. The challenge ahead: balancing external opportunity, fiscal credibility, and environmental risk.",
+      "keyDiscussion": [
+        "China–ASEAN agreement (CAFTA 3.0) extends trade beyond tariffs into digital, green, and pharma—double-edged for Indonesia’s agriculture and manufacturing sectors",
+        "Change at the top: Sri Mulyani’s dismissal opens risk of slippage in budget discipline and tilt toward visible infrastructure/defense spending",
+        "Bali and East Nusa Tenggara floods leave ~15 dead, hundreds displaced, and major damage to roads, housing, and tourism assets",
+        "Trade pressure: Indonesian mid-tier manufacturers may face import surges in steel, electronics, furniture from China",
+        "Fiscal credibility is the real test: markets will watch whether new leadership honors the 3% deficit ceiling and resists short-term populist shifts"
+      ],
+      "tags": [
+        "indonesia",
+        "trade",
+        "budget",
+        "flood",
+        "climate",
+        "china",
+        "regional"
+      ],
+      "image": {
+        "url": "https://asean.org/wp-content/uploads/2023/05/1-scaled.jpg",
+        "alt": "Indonesia Regional Outlook cover"
+      },
+      "contentHtml": "<h2>1. China–ASEAN Free Trade Upgrade: More Than Tariffs</h2><p>China is pushing ASEAN to ratify **CAFTA 3.0** by end-2025. Unlike earlier versions focused on tariff cuts, this upgrade expands into **agriculture, digital trade, pharmaceuticals, and green supply chains**.</p><p>For Indonesia:</p><ul><li><strong>Upside:</strong> plantation & agro-processing (palm, rubber, fish, cocoa), logistics and digital platforms stand to benefit from smoother Chinese access.</li><li><strong>Risks:</strong> import surges of steel, electronics, textiles, and furniture may undercut mid-tier local manufacturers; pharmaceutical companies may be exposed to cheaper Chinese generics.</li><li><strong>Key lever:</strong> how Jakarta designs safeguards, industrial support, and regulatory protection as CAFTA 3.0 ratifies.</li></ul><h2>2. 2026 Budget Shake-up: Discipline vs Politics</h2><p>The outgoing Finance Minister Sri Mulyani had proposed a **2.48% deficit target** and gradual reform continuity. Her September dismissal and replacement by **Purbaya Yudhi Sadewa** bring both uncertainty and opportunity.</p><p>While the **3% legal deficit ceiling** remains binding, the internal composition of the budget is likely to shift:</p><ul><li>Technocratic reforms (tax, climate, health) may cede ground to visible, politically popular projects like infrastructure and defense.</li><li>The new capital Nusantara, already scaled back, may face further cuts or reorientations.</li><li>Markets will keenly monitor bond yields and the rupiah for signs of credibility slippage.</li></ul><h2>3. Flood Disasters in Bali & East Nusa Tenggara</h2><p>Heavy rains in early September triggered floods and landslides affecting Bali and East Nusa Tenggara. At least **15 people died**, many went missing, and hundreds were displaced. Infrastructure—roads, houses, public utilities—suffered serious damage.</p><p><strong>Underlying drivers & vulnerabilities:</strong></p><ul><li>Unusually intense rainfall at season onset.</li><li>Topography and land slope concentrate runoff into low-lying areas.</li><li>Poor drainage systems, blocked channels, deforestation exacerbate flood impacts.</li></ul><p><strong>Impacts:</strong> local economies disrupted (especially tourism in Bali), reconstruction costs rising, relief efforts complicated by terrain and access challenges.</p><h2>Final Word</h2><p>These three developments—trade realignment, fiscal leadership change, and climate shock—are more than news items. They form a triad of stress tests for Indonesia’s resilience. Can Jakarta manage external openings without exposure? Can it hold fiscal credibility while pursuing political priorities? And can it absorb climate shocks without derailing growth?</p><p>The path forward demands **structural discipline, adaptive infrastructure, and contingency buffers**—or else external gains and domestic ambitions could be overwhelmed by climate risk and fiscal drift.</p>"
+    }
+  ]
+}

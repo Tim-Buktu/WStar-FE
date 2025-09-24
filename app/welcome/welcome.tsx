@@ -1,5 +1,5 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+// Western Star logo
+const logo = "/western-star-logo.png";
 
 export function Welcome() {
   return (
@@ -7,16 +7,7 @@ export function Welcome() {
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
           <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
+            <img src={logo} alt="Western Star" className="block w-full" />
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">

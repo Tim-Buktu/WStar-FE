@@ -1,0 +1,32 @@
+{
+  "newsletters": [
+    {
+      "id": "the-long-awaited-agreement-2025-09-17",
+      "slug": "the-long-awaited-agreement",
+      "title": "The Long Awaited Agreement",
+      "date": "2025-09-17",
+      "summary": "After nine years, Indonesia and the EU struck their Comprehensive Economic Partnership Agreement (CEPA), offering tariff relief for palm oil, textiles, fisheries, and processed nickel—but conditional on strict ESG compliance. Meanwhile, Indonesia’s fuel import strategy is being recast with quota controls and supply stress, and China grapples with deflation and overcapacity. The message: market access is now tied to new structural rules, not free trade alone.",
+      "keyDiscussion": [
+        "Indonesia–EU CEPA closes after 9 years—tariff cuts, strict ESG, focus on downstream nickel/cobalt access",
+        "Firms underinvesting in sustainability risk shipments stuck in customs despite tariff advantage",
+        "Fuel squeeze: Shell & BP-AKR report 92/95 octane shortages due to quota caps and import control shifts",
+        "Indonesia pivots import sourcing from Singapore toward U.S./Middle East, raising logistics and cost challenges",
+        "China’s “involution”: solar & EV makers suffer narrow margins despite record output—price wars, deflation pressures"
+      ],
+      "tags": [
+        "indonesia",
+        "eu",
+        "trade",
+        "agreement",
+        "fuel",
+        "china",
+        "involution"
+      ],
+      "image": {
+        "url": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/657/2025/07/13/IMG-20250713-WA0019-1403470344.jpg",
+        "alt": "The Long Awaited Agreement cover"
+      },
+      "contentHtml": "<h2>EU–Indonesia CEPA: Door Open, But With Strings</h2><p>After nine long years, Indonesia and Brussels sealed their Comprehensive Economic Partnership Agreement (CEPA). The deal does more than cut tariffs on palm oil, seafood, textiles, and processed nickel/cobalt—it binds market access to demanding ESG, traceability, deforestation, and labor standards. Indonesia’s downstreaming strategy demands EU buyers commit to local value chains, since raw ore exports remain banned.</p><p><strong>Opportunity → Conditional:</strong> Firms that embed audits, certifications, and sustainability from Day 1 gain an edge. Firms that lag risk being blocked at customs despite tariff advantages.</p><h2>Fuel Strategy Rewired, With Pain</h2><p>Shell and BP-AKR recently reported shortages in 92/95 octane fuel. The root: Indonesia’s tight quotas and mandates forcing private importers to rely on Pertamina. The aim is energy sovereignty—reducing dependence on Singapore (former >50% supplier) by shifting to U.S. and Middle East barrels. But the flip side: longer shipping routes, higher costs, distribution bottlenecks, and retailer margin pressure.</p><p><strong>Strategic tension:</strong> state control vs. market flexibility. The quotas give government market power, but private players may struggle or bleed.</p><h2>China’s “Involution” Unveiled</h2><p>In China, solar and EV makers are caught in an efficiency trap. Despite record 588 GW solar output vs 451 GW demand in H1 2025, firms lost Rmb 20.2B (~US$2.8B). Overcapacity + aggressive discounting = margin collapse. EV plants are similarly underutilized, fueling structural deflation. CPI is negative; PPI remains deep in territory.</p><p>The result: deep discounting, factories stretched to min margins, and growing worker burnout as 996-style hours intensify.</p><h2>Cross-Cutting Themes & Takeaways</h2><ul><li><strong>Policy as structure:</strong> CEPA, fuel quotas, and China’s caps are all governments remapping supply chains.</li><li><strong>Compliance is the new tariff:</strong> ESG, quota, traceability rules now gate access as much as duties.</li><li><strong>Volatility = opportunity + risk:</strong> cheap Chinese exports clash with Indonesian pump cost spikes, while EU access opens new windows. The key is adaptive resilience—multi-route sourcing, trade compliance infrastructure, and strategic hedges.</li></ul><h2>Final Word</h2><p>We’re past trade as free market romance. We’re in the era of trade governed by standards, state direction, and conditional access. CEPA gives Indonesia an opening—but only those who treat compliance as core strategy will capture the prize. The rest may find tariffs alone won’t unlock markets.</p>"
+    }
+  ]
+}

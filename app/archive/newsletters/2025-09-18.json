@@ -1,0 +1,31 @@
+{
+  "newsletters": [
+    {
+      "id": "indonesia-in-transition-2025-09-18",
+      "slug": "indonesia-in-transition",
+      "title": "⭐️ Indonesia in Transition: Three Strategic Shifts to Watch",
+      "date": "2025-09-18",
+      "summary": "Indonesia is recalibrating across three critical axes: building an ESG-aligned nickel hub, consolidating control over gas infrastructure, and confronting pressures on central bank independence. These moves reflect a push for greater value capture, resource control, and state coordination—but also expose institutional and credibility stresses.",
+      "keyDiscussion": [
+        "Danantara & GEM partner on a US$1.42B HPAL nickel processing hub to anchor Indonesia in the EV supply chain",
+        "Medco acquires Repsol’s 24% stake in Corridor PSC to consolidate energy infrastructure control",
+        "Proposed legal changes challenge Bank Indonesia’s independence by expanding its mandate and increasing parliamentary oversight",
+        "Investor concerns spike as FDI in Q2 2025 falls ~6.95% YoY amid institutional uncertainty",
+        "The thread: centralization over decentralization, value capture over raw exports, and growth ambition testing institutional limits"
+      ],
+      "tags": [
+        "indonesia",
+        "nickel",
+        "energy",
+        "policy",
+        "central bank",
+        "economy"
+      ],
+      "image": {
+        "url": "https://cms.cerah.or.id/storage/publication/eKqwPqUCByAUvQoISLCZJLv0I1PM7ZOX1FRS3HCd.jpg",
+        "alt": "Indonesia in Transition strategic shifts cover"
+      },
+      "contentHtml": "<h2>Indonesia in Transition: Three Strategic Shifts to Watch</h2><h2>1. Building a Green Nickel Hub</h2><p>Indonesia’s sovereign wealth fund <strong>Danantara</strong> is partnering with China’s GEM to co-develop a nickel processing hub framed as a “green industrial estate.” The first major disclosed module is a US$1.42 billion HPAL (High-Pressure Acid Leach) plant targeting ~66,000 tonnes/year of nickel in MHP (mixed hydroxide precipitate). Partners include Vale Indonesia, EcoPro (S. Korea), and Merdeka Copper Gold. The goal: embed recycling, ESS (energy storage systems), and battery-grade production within Indonesia, signaling that it can meet global ESG expectations.</p><p><em>Risks:</em> HPAL plants are capital-intensive and complex; the “net-zero” label depends on renewable energy sourcing, tailings management, and operational discipline. Execution slippage could turn vision into stranded asset.</p><h2>2. Consolidating the Gas Corridor</h2><p>In South Sumatra, MedcoEnergi purchased Repsol’s 24% stake in the Corridor PSC for US$425 million, raising its stakeholder share to 70% (with Pertamina holding 30%). Corridor PSC includes seven gas fields and one oil field, supplying Java, Sumatra, Batam, and Singapore via pipeline.</p><p>Medco’s strategy is integration: upstream fields → pipelines → downstream gas-fired power plants (via its 3,100 MW capacity including 275 MW Riau CCPP). The acquisition gives Medco greater control over pricing, supply reliability, and upstream-to-power margins.</p><h2>3. Bank Indonesia at the Crossroads</h2><p>Draft bill proposals would expand BI’s mandate beyond monetary stability to include growth and jobs, grant parliamentary oversight over board members, and institutionalize burden-sharing (e.g. financing social programs such as free meals). These shifts could erode BI’s independence—a pillar since 1999.</p><p><em>Investor signals:</em> FDI dropped ~6.95% YoY in Q2 2025 (~US$12.3B), perhaps reflecting unease over institutional drift. While equity markets remain buoyant, bond and FX investors demand higher risk premia. The rupiah responded to BI’s surprise 25 bps cut to 4.75% with volatility. The risk: Indonesia shifting toward a Turkey- or Argentina-style cycle of politicized monetary policy and inflation contagion.</p><h2>Common Thread & Bottom Line</h2><p>Across nickel, gas, and monetary policy, Indonesia is doubling down on **state coordination, centrally controlled capital deployment, and resource value capture**. Ambition is high—but so is the strain on institutions.</p><p>For investors and observers, Indonesia remains among the most compelling emerging markets—but the real test will be whether institutions keep pace with ambition. Bold headlines may draw eyes—long-term credibility draws capital.</p>"
+    }
+  ]
+}

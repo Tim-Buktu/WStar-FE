@@ -1,0 +1,32 @@
+{
+  "newsletters": [
+    {
+      "id": "indonesia-s-financial-quake-2025-09-10",
+      "slug": "indonesia-s-financial-quake",
+      "title": "⭐️ Indonesia’s Financial Quake",
+      "date": "2025-09-10",
+      "summary": "Indonesia unleashes a bold liquidity maneuver as the new finance minister redeploys Rp 200 trillion from idle government deposits into banks—aiming to unclog credit. But the shock came with a harsher jolt: the dismissal of Sri Mulyani, a trusted fiscal anchor. The stakes: central bank independence, burden sharing, and whether unpredictability will spook investors or catalyze growth.",
+      "keyDiscussion": [
+        "Rp 200T redeployed from BI-held government deposits into banks via SOE-bank scheme, with 2% deposit rate and 6% lending rate to cooperatives",
+        "Indonesia had ~Rp 430T of idle budget funds at BI, not stimulating growth",
+        "BI had already cut rates by 125 bps and was buying bonds to stabilize yields",
+        "Cabinet reshuffle removed Sri Mulyani; markets reacted sharply—Jakarta Composite fell ~2%, rupiah weakened",
+        "Burden sharing (BI and government cost-sharing) returns in new form, with risks to BI balance sheet and independence",
+        "Policy inconsistency and idiosyncratic leadership raise credibility questions across fiscal, monetary, and execution fronts"
+      ],
+      "tags": [
+        "indonesia",
+        "finance",
+        "liquidity",
+        "monetary policy",
+        "credibility",
+        "reform"
+      ],
+      "image": {
+        "url": "https://storage.googleapis.com/wpc-storage/jadipcpm.id/2024/09/f5c080a2-image-1024x685.png",
+        "alt": "Indonesia’s Financial Quake cover"
+      },
+      "contentHtml": "<h2>Liquidity Injection: Unlocking Rp 200 Trillion</h2><p>New Finance Minister Purbaya Yudhi Sadewa announced the redeployment of Rp 200 trillion from government deposits held at Bank Indonesia (BI) into commercial banks. This policy seeks to release idle capital and spur credit growth. Indonesia had more than Rp 430 trillion in unspent budget allocations sitting at BI—funds neither invested nor lending. Rather than equity injections, this is structured as deposits to be lent by SOE banks at ~6% to cooperatives.</p><p>SOE banks (Mandiri, BRI, BNI, BSI) will take the deposits at ~2%, offering lending to cooperatives. The government retains the deposit interest, while banks capture the spread. The real test: whether the funds reach MSMEs, households, or simply rest as new reserves.</p><h2>Cabinet Shake-Up: The Exit of Sri Mulyani</h2><p>Just days earlier, nationwide protests over costs of living and legislative perks had turned violent. In response, President Prabowo dismissed five ministers, most notably Sri Mulyani, who had served as a credibility anchor through multiple reform cycles. Her removal jolted markets: the Jakarta Composite dropped nearly 2%, and the rupiah slipped. Investors fear this signals a shift towards looser fiscal discipline and political overreach.</p><p>Purbaya brings academic credentials (Purdue-trained, ex-Deposit Insurance chief) and alignment with growth ambitions (5% → 8% GDP). But his first major act—redeploying liquidity—blurs lines between fiscal and monetary authority.</p><h2>Burden Sharing Reintroduced — With Strings</h2><p>The concept of government–central bank “burden sharing” is back. During COVID, BI absorbed interest costs on government debt under emergency measures. Today, it’s reemerging in a more institutionalized fashion: deposits earn elevated rates, new bank placements occur, and BI is buying bonds in secondary markets to stabilize yields.</p><p>Short-term gains include lower financing cost, liquidity release, and credit support. Risks: strain on BI’s balance sheet, reduced future dividend flows to the government, and a blurred central bank mandate raising investor concerns.</p><h2>Idiosyncratic Leadership & Policy Discontinuity</h2><p>Prabowo’s governing style—bold, populist, sometimes abrupt—is showing its contradictions. Between aggressive social promises (free meals, cheap credit) and sudden fiscal cuts, between opaque reshuffles and technocratic rhetoric, markets grapple with unpredictability.</p><p>The fact that ~Rp 430T was left idle underscores weak coordination. The liquidity move may be necessary, but it demands transparency, guardrails, and clear metrics. Without these, economists warn, the move lurches between stimulus and fiscal overreach.</p><h2>Investor Watchpoints</h2><ul><li>Credit statistics: do new loans grow or do deposits remain idle?</li><li>Fiscal math: what’s the net gain after cost to BI and lost dividends?</li><li>Signs of monetary politicization: will BI’s decisions tilt to political timelines?</li><li>Execution of flagship programs: free meals, cooperative lending, local government funds.</li></ul><p><strong>Bottom line:</strong> Indonesia’s financial quake signals a regime testing moment—a state attempting to turn idle savings into growth, reshaping finance mandates, and invoking uncertainty in the process. The ambition is grand; whether markets see opportunity or risk will depend on clarity, follow-through, and now more than ever, credibility.</p>"
+    }
+  ]
+}

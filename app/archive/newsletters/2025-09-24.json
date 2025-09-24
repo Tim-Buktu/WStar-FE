@@ -1,0 +1,33 @@
+{
+  "newsletters": [
+    {
+      "id": "trade-frictions-opportunities-2025-09-24",
+      "slug": "trade-frictions-opportunities",
+      "title": "⭐️ Trade Frictions & Opportunities",
+      "date": "2025-09-24",
+      "summary": "China faces a record wave of trade probes, coal rebounds in East Asia despite climate pledges, and AI emerges as both a booster and disruptor of global trade. For Indonesia, the challenge is balancing short-term pressures in steel and coal with long-term opportunities in EV supply chains and digital trade.",
+      "keyDiscussion": [
+        "China under record 198 trade investigations in 2024 across steel, EVs, solar, chemicals",
+        "EU and US probe Chinese EV subsidies and solar panels, reshaping supply chains",
+        "Indonesia risks cheap Chinese steel imports but benefits from EV/battery relocation",
+        "East Asia coal imports hit 85.34m tons in Aug 2025, highest since Dec 2024",
+        "Indonesia’s coal exports fell 6.1% YoY in H1 2025, revenue down 21.7%",
+        "AI could boost global trade by 34–37% by 2040, but inequality risks loom",
+        "Indonesia’s digital economy projected to surpass $200B by 2030, but gaps remain"
+      ],
+      "tags": [
+        "indonesia",
+        "trade",
+        "china",
+        "energy",
+        "ai",
+        "global economy"
+      ],
+      "image": {
+        "url": "https://image.cnbcfm.com/api/v1/image/107344967-1702022580120-gettyimages-1223177148-tradechina.jpeg?v=1702022646",
+        "alt": "Trade Frictions & Opportunities cover"
+      },
+      "contentHtml": "<h2>Trade Frictions: China Under Fire</h2><p>China faced 198 trade probes in 2024, spanning EVs, solar, steel, and chemicals. Western economies led the charge, with the EU targeting EV subsidies and the US imposing anti-dumping duties on solar panels. Supply chains are fragmenting as Chinese firms reroute through ASEAN and Mexico, raising origin risks. Indonesia risks cheap Chinese steel undercutting Krakatau Steel, but stands to gain as EV and battery makers relocate to nickel hubs like Morowali and Weda Bay. Indonesia imposed anti-dumping duties on nylon film in Mar 2025, showing readiness to defend industries.</p><h2>Coal’s Comeback: East Asia’s Energy Dilemma</h2><p>East Asia imported 85.34m tons of thermal coal in Aug 2025 (+6.4m from July). China added 5.3m tons, Japan 0.6m, South Korea 1.8m. Drivers: weak hydro, heatwaves, and supply cuts. Indonesia’s exports fell 6.1% YoY in H1 2025 (185.98m tons), revenue down 21.7% to $13.8B. Markets shift to higher-grade coal from Australia and South Africa, leaving Indonesia exposed. Gov’t responses include relaxing export price rules, dynamic quotas, and boosting domestic demand via smelters.</p><h2>AI & Trade: A Double-Edged Disruptor</h2><p>The WTO projects AI could lift global trade by 34–37% by 2040. Gains include smart logistics, customs automation, and SME financing. Risks: inequality, rule-making by big powers, and concentration among large firms. Indonesia’s digital economy ($82B in 2023) could surpass $200B by 2030. Opportunities include AI-enabled ports (Tanjung Priok, Patimban) and SME access to global buyers. Risks are low internet penetration (77% nationally), thin AI workforce, and restrictive data rules. Policies: AI Strategy 2045, partnerships with Microsoft/Google/Huawei, ASEAN DEFA negotiations.</p><h2>Closing Thought</h2><p>Three trends frame Indonesia’s trade future: global backlash to Chinese overcapacity, coal’s stubborn role in Asia’s energy mix, and AI’s potential to transform trade. For Indonesia, the task is to defend against shocks, leverage relocations, and invest in digital and renewable capacity. Winners will be those who pivot fastest and embed resilience into trade and technology strategies.</p>"
+    }
+  ]
+}
