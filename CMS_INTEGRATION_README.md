@@ -36,6 +36,7 @@ This document outlines the integration of the CMS system, news utilities, and ad
 
 - **Newsletters**: Create, edit, delete, and manage newsletter content
 - **News Articles**: Full CRUD operations with visibility controls and showcase sections
+  - Also supports manual JSON archive files under `app/archive/news/*.json` that are auto-merged on first load
 - **Content Validation**: Built-in validation for required fields and data formats
 - **Tag Management**: Comma-separated tag system with filtering capabilities
 
@@ -69,6 +70,38 @@ This document outlines the integration of the CMS system, news utilities, and ad
 - **Edit Content**: Click the edit icon next to any item
 - **Delete Content**: Click the trash icon (with confirmation)
 - **Toggle Visibility**: Use the eye icon for news articles
+
+### Adding News via JSON (optional)
+
+Place files under `app/archive/news/*.json` with the following structure:
+
+```
+{
+  "news": [
+    {
+      "id": "string-or-number",
+      "title": "...",
+      "date": "YYYY-MM-DD",
+      "displayDate": "Readable (optional)",
+      "summary": "...",
+      "category": "Technology | Policy | Business | Global Economy | ...",
+      "tags": ["Technology", "AI & ML"],
+      "image": "https://...",
+      "contentHtml": "<p>HTML body</p>",
+      "views": 1234,
+      "author": { "name": "...", "role": "...", "avatar": "..." },
+      "showcaseSection": "featured | mosaic | loop",
+      "isVisible": true,
+      "position": 1
+    }
+  ]
+}
+```
+
+Notes:
+- Files are loaded once on first `getCMSData('news')` call and merged with CMS items.
+- Duplicates by `id` are ignored (runtime/CMS data wins).
+- You can use `contentHtml` or `content` for body.
 
 ### Backend Integration
 

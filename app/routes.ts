@@ -7,6 +7,7 @@ export default [
   route("services", "routes/services.tsx"),
   route("research", "routes/research.tsx"),
   route("news", "routes/news.tsx"),
+  route("news/:id", "routes/news.$id.tsx"),
   route("newsroom", "routes/newsroom.tsx"),
   route("newsletter/:id", "routes/newsletter.$id.tsx"),
   route("wip", "routes/wip.tsx"),

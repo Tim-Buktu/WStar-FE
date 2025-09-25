@@ -52,6 +52,39 @@ To build and run using Docker:
 docker build -t my-app .
 
 # Run the container
+### Manual JSON archive for News (optional)
+
+You can add News articles via flat JSON files (useful when CMS is offline or for quick imports). Place files under `app/archive/news/*.json` with this shape:
+
+```
+{
+	"news": [
+		{
+			"id": "string-or-number",
+			"title": "...",
+			"date": "YYYY-MM-DD",
+			"displayDate": "Readable date (optional)",
+			"summary": "...",
+			"category": "Technology | Policy | Business | Global Economy | ...",
+			"tags": ["Technology", "AI & ML"],
+			"image": "https://..." ,
+			"contentHtml": "<p>HTML body</p>",
+			"views": 1234,
+			"author": { "name": "...", "role": "...", "avatar": "..." },
+			"showcaseSection": "featured | mosaic | loop",
+			"isVisible": true,
+			"position": 1
+		}
+	]
+}
+```
+
+Notes:
+- The app automatically loads these files on first visit to the News page.
+- CMS changes continue to work; JSON is simply merged in and de-duplicated by `id`.
+- You can use `contentHtml` or `content`.
+- Keep filenames descriptive, e.g. `2025-09-25.json`.
+
 docker run -p 3000:3000 my-app
 ```
 

@@ -529,7 +529,7 @@ function MosaicLayout({
   categoryIcons,
 }: MosaicLayoutProps) {
   const handleClick = (article: Article) => {
-    window.location.href = `/newsletter/${article.id}`;
+    window.location.href = `/news/${article.id}`;
   };
 
   return (
@@ -798,7 +798,7 @@ function GridCard({
   const Icon = categoryIcons[article.category || ""] || Tag;
 
   const handleClick = () => {
-    window.location.href = `/newsletter/${article.id}`;
+    window.location.href = `/news/${article.id}`;
   };
 
   return (
@@ -907,7 +907,7 @@ function ListCard({
   const Icon = categoryIcons[article.category || ""] || Tag;
 
   const handleClick = () => {
-    window.location.href = `/newsletter/${article.id}`;
+    window.location.href = `/news/${article.id}`;
   };
 
   return (
@@ -1016,7 +1016,7 @@ function InTheLoopSection({
                 key={article.id}
                 article={article}
                 onClick={() =>
-                  (window.location.href = `/newsletter/${article.id}`)
+                  (window.location.href = `/news/${article.id}`)
                 }
                 formatDate={formatDate}
                 getTagColor={getTagColor}

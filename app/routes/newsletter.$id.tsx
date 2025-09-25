@@ -215,7 +215,10 @@ export default function NewsletterDetailPage() {
   const estimateReadingTime = (content?: string, rawHtml?: string) => {
     const wordsPerMinute = 200;
     const source = rawHtml || content || "";
-    const wordCount = source.replace(/<[^>]*>/g, "").split(/\s+/).filter(Boolean).length;
+    const wordCount = source
+      .replace(/<[^>]*>/g, "")
+      .split(/\s+/)
+      .filter(Boolean).length;
     return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
   };
 
@@ -238,7 +241,7 @@ export default function NewsletterDetailPage() {
   };
 
   return (
-  <div className="min-h-screen bg-white newsletter-detail-page">
+    <div className="min-h-screen bg-white newsletter-detail-page">
       <Navbar />
 
       {/* Reading Progress Bar */}
@@ -286,9 +289,7 @@ export default function NewsletterDetailPage() {
               {/* Category & Title */}
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 {newsletter.category && (
-                  <span
-                    className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-slate-900 text-white shadow-sm"
-                  >
+                  <span className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-slate-900 text-white shadow-sm">
                     {newsletter.category}
                   </span>
                 )}
@@ -299,7 +300,11 @@ export default function NewsletterDetailPage() {
                   </span>
                   <span className="inline-flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" />
-                    {estimateReadingTime(newsletter.content, (newsletter as any).contentHtml)} min read
+                    {estimateReadingTime(
+                      newsletter.content,
+                      (newsletter as any).contentHtml
+                    )}{" "}
+                    min read
                   </span>
                   {newsletter.views && (
                     <span className="inline-flex items-center gap-1">
@@ -444,7 +449,9 @@ export default function NewsletterDetailPage() {
                 <div
                   className="newsletter-html-body"
                   // Prefer raw contentHtml for fidelity; fallback to processed content
-                  dangerouslySetInnerHTML={{ __html: newsletter.contentHtml || newsletter.content! }}
+                  dangerouslySetInnerHTML={{
+                    __html: newsletter.contentHtml || newsletter.content!,
+                  }}
                 />
               </div>
             </div>
@@ -632,7 +639,7 @@ function RelatedNewsletterCard({
 
   return (
     <article
-  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 animate-fadeInUp"
+      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 animate-fadeInUp"
       style={{ animationDelay: `${index * 100}ms` }}
       onClick={handleClick}
     >

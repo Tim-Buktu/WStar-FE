@@ -294,7 +294,8 @@ export function ContentPreview() {
                     {lead.title}
                   </h3>
                   <p className="hidden md:block text-white/85 max-w-2xl line-clamp-3 text-sm md:text-base leading-relaxed">
-                    {lead.summary || "Explore the latest insights and analysis..."}
+                    {lead.summary ||
+                      "Explore the latest insights and analysis..."}
                   </p>
                 </div>
               </div>
@@ -329,8 +330,8 @@ export function ContentPreview() {
                   {rightTop && (
                     <Link
                       to={`/news/${rightTop.id}`}
-                      className="relative block rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg hover:shadow-xl transition-all duration-300"
-                      style={{ height: "50%" }}
+                      className="relative block rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg hover:shadow-xl transition-all duration-300 min-h-0"
+                      style={{ flex: 3, minHeight: 0 }}
                     >
                       <div className="absolute inset-0 bg-slate-200">
                         {rightTop.image ? (
@@ -366,8 +367,8 @@ export function ContentPreview() {
                   {rightBottom && (
                     <Link
                       to={`/news/${rightBottom.id}`}
-                      className="relative block rounded-2xl overflow-hidden border border-slate-200/60 shadow-md hover:shadow-lg transition-all duration-300"
-                      style={{ height: "25%" }}
+                      className="relative block rounded-2xl overflow-hidden border border-slate-200/60 shadow-md hover:shadow-lg transition-all duration-300 min-h-0"
+                      style={{ flex: 2, minHeight: 0 }}
                     >
                       <div className="absolute inset-0 bg-slate-200">
                         {rightBottom.image ? (

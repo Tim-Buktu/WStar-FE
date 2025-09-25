@@ -4,7 +4,7 @@
 //  - Each file exports an object: { "newsletters": [ { ... } ] }
 //  - Loaded lazily the first time `getCMSData('newsletters')` is invoked via import.meta.glob
 //  - Fields `contentHtml` and `content` are normalized into `content`
-//  - Duplicate IDs are ignored (runtime edits / seeded cache take precedence)
+//  - Duplicate IDs are ignored (runtime edits via admin take precedence)
 //  - Safe: failure to load archive does not break runtime; only logs in dev
 
 export type Newsletter = {
@@ -43,6 +43,7 @@ export type Article = {
   date: string;
   displayDate?: string;
   content?: string;
+  keyDiscussion?: string | string[];
   image?: string | { url: string; alt?: string };
   tags: string[];
   summary?: string;
@@ -84,13 +85,15 @@ let cache: {
   news: Article[];
   availableTags: AvailableTag[];
   testimonials: TestimonialData[];
-  _archiveLoaded?: boolean; // internal flag
+  _newsletterArchiveLoaded?: boolean; // internal flag
+  _newsArchiveLoaded?: boolean; // internal flag
 } = {
   newsletters: [],
   news: [],
   availableTags: [],
   testimonials: [],
-  _archiveLoaded: false,
+  _newsletterArchiveLoaded: false,
+  _newsArchiveLoaded: false,
 };
 
 // Force database mode for production
@@ -111,8 +114,8 @@ export function clearCMSCache(): void {
 export async function getCMSData(
   key: "newsletters" | "news" | "availableTags" | "testimonials"
 ) {
-  // Lazy load manual JSON archive (only first time newsletters requested)
-  if (key === "newsletters" && !cache._archiveLoaded) {
+  // Lazy load manual Newsletter JSON archive (first time requested)
+  if (key === "newsletters" && !cache._newsletterArchiveLoaded) {
     try {
       // Dynamic import all JSON files in archive (Vite supports import.meta.glob)
       // These files are user-maintained manual newsletter JSONs.
@@ -121,8 +124,9 @@ export async function getCMSData(
       }) as Record<string, any>;
       const imported: Newsletter[] = [];
       Object.values(modules).forEach((mod: any) => {
-        if (mod && Array.isArray(mod.newsletters)) {
-          mod.newsletters.forEach((n: any) => {
+        const payload = mod?.newsletters || mod?.default?.newsletters;
+        if (payload && Array.isArray(payload)) {
+          payload.forEach((n: any) => {
             // Normalize field names to match Newsletter type
             const normalized: Newsletter = {
               id: n.id || n.slug || Date.now().toString(),
@@ -152,7 +156,7 @@ export async function getCMSData(
         }
       });
       if (imported.length) {
-        // Merge & sort by date desc while preserving existing seeded newsletters
+  // Merge & sort by date desc (admin/runtime edits will already be in cache)
         cache.newsletters = [...cache.newsletters, ...imported].sort(
           (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
@@ -163,7 +167,65 @@ export async function getCMSData(
         console.warn("Archive load failed:", err);
       }
     } finally {
-      cache._archiveLoaded = true;
+      cache._newsletterArchiveLoaded = true;
+    }
+  }
+
+  // Lazy load manual News JSON archive (first time requested)
+  if (key === "news" && !cache._newsArchiveLoaded) {
+    try {
+      const modules = import.meta.glob("../archive/news/*.json", {
+        eager: true,
+      }) as Record<string, any>;
+      const imported: Article[] = [];
+      Object.values(modules).forEach((mod: any) => {
+        const payload = mod?.news || mod?.default?.news;
+        if (payload && Array.isArray(payload)) {
+          payload.forEach((n: any, idx: number) => {
+            const normalized: Article = {
+              id: n.id || n.slug || Date.now().toString() + "-" + idx,
+              title: n.title,
+              date: n.date,
+              displayDate: n.displayDate,
+              content: n.content || n.contentHtml, // allow same field names as newsletters
+              keyDiscussion: n.keyDiscussion,
+              image: n.image,
+              tags: n.tags || [],
+              summary: n.summary,
+              category: n.category,
+              views: n.views,
+              author: n.author,
+              lastUpdated: n.lastUpdated,
+              insights: n.insights,
+              resources: n.resources,
+              showcaseSection: n.showcaseSection,
+              isVisible: n.isVisible !== undefined ? n.isVisible : true,
+              position: n.position,
+            };
+            // Avoid duplicates (prefer dynamic cache entries that may have edits)
+            const exists = cache.news.find(
+              (c) => c.id.toString() === normalized.id.toString()
+            );
+            if (!exists) imported.push(normalized);
+          });
+        }
+      });
+      if (imported.length) {
+  // Merge & sort by date desc (admin/runtime edits will already be in cache)
+        cache.news = [...cache.news, ...imported]
+          .filter((a) => a.isVisible !== false)
+          .sort(
+            (a, b) =>
+              new Date(b.date).getTime() - new Date(a.date).getTime() ||
+              (Number(b.position || 0) - Number(a.position || 0))
+          );
+      }
+    } catch (err) {
+      if (import.meta.env?.DEV) {
+        console.warn("News archive load failed:", err);
+      }
+    } finally {
+      cache._newsArchiveLoaded = true;
     }
   }
   // In production, this would fetch from your database API
@@ -395,122 +457,11 @@ export function __seedCMS(data: Partial<typeof cache>) {
   }
 }
 
-// Initialize with sample data for news / tags / testimonials only.
-// Newsletter seeding removed—now sourced exclusively from archive JSON files.
+// Initialize with sample data for tags / testimonials only.
+// Newsletter and News seeding removed—now sourced exclusively from archive JSON files.
 __seedCMS({
   newsletters: [],
-  news: [
-    {
-      id: "1",
-      title: "Indonesia's Digital Economy Reaches $77B Milestone",
-      date: "2025-09-24",
-      displayDate: "September 24, 2025",
-      summary:
-        "The archipelago nation solidifies its position as Southeast Asia's largest digital economy, driven by e-commerce growth and fintech adoption.",
-      category: "Technology",
-      content:
-        "<h2>Digital Transformation Accelerates</h2><p>Indonesia's digital economy has reached a significant milestone of $77 billion, marking a 22% year-over-year growth that positions the country as the undisputed leader in Southeast Asia's digital landscape.</p><p>The growth is primarily driven by robust e-commerce platforms, rapid fintech adoption, and increasing digital payment usage across urban and rural areas.</p>",
-      tags: ["Technology", "Business", "Global Economy"],
-      image: "https://via.placeholder.com/600x400",
-      views: 8920,
-      author: {
-        name: "Maya Sari",
-        role: "Indonesia Correspondent",
-        avatar: "https://via.placeholder.com/40x40",
-      },
-      isVisible: true,
-      position: 1,
-      showcaseSection: "featured",
-    },
-    {
-      id: "2",
-      title: "Tech Giant Opens New AI Research Hub in Jakarta",
-      date: "2025-09-23",
-      displayDate: "September 23, 2025",
-      summary:
-        "Major technology company announces $500M investment in artificial intelligence research facility, signaling confidence in Indonesia's tech talent.",
-      category: "Technology",
-      content:
-        "<h2>AI Investment Surge</h2><p>A leading global technology company has announced plans to establish a cutting-edge AI research hub in Jakarta, with an initial investment of $500 million over the next three years.</p><p>The facility will focus on developing AI solutions tailored for Southeast Asian markets, particularly in natural language processing for local languages and cultural contexts.</p>",
-      tags: ["Technology", "AI & ML", "Innovation"],
-      image: "https://via.placeholder.com/600x400",
-      views: 12450,
-      author: {
-        name: "David Chen",
-        role: "Technology Analyst",
-        avatar: "https://via.placeholder.com/40x40",
-      },
-      isVisible: true,
-      position: 2,
-      showcaseSection: "mosaic",
-    },
-    {
-      id: "3",
-      title: "New Policy Framework for Green Energy Investment",
-      date: "2025-09-22",
-      displayDate: "September 22, 2025",
-      summary:
-        "Government unveils comprehensive policy package aimed at attracting $50B in renewable energy investments by 2030.",
-      category: "Policy",
-      content:
-        "<h2>Green Energy Push</h2><p>The government has launched an ambitious policy framework designed to accelerate renewable energy adoption and attract significant foreign investment in the green energy sector.</p><p>Key provisions include tax incentives, streamlined permitting processes, and guaranteed power purchase agreements for renewable energy projects.</p>",
-      tags: ["Policy", "Innovation", "Global Economy"],
-      image: "https://via.placeholder.com/600x400",
-      views: 6780,
-      author: {
-        name: "Sarah Wilson",
-        role: "Policy Analyst",
-        avatar: "https://via.placeholder.com/40x40",
-      },
-      isVisible: true,
-      position: 3,
-      showcaseSection: "mosaic",
-    },
-    {
-      id: "4",
-      title: "Startup Funding Surge: Q3 2025 Investment Analysis",
-      date: "2025-09-21",
-      displayDate: "September 21, 2025",
-      summary:
-        "Southeast Asian startups raised record $8.2B in Q3 2025, with fintech and healthtech leading the investment surge.",
-      category: "Business",
-      content:
-        "<h2>Investment Boom Continues</h2><p>The third quarter of 2025 has seen unprecedented startup funding activity across Southeast Asia, with total investments reaching $8.2 billion.</p><p>Fintech companies captured 35% of total funding, while healthtech and edtech startups also showed strong investor interest.</p>",
-      tags: ["Business", "Innovation", "Markets"],
-      image: "https://via.placeholder.com/600x400",
-      views: 9340,
-      author: {
-        name: "Jennifer Lee",
-        role: "Business Reporter",
-        avatar: "https://via.placeholder.com/40x40",
-      },
-      isVisible: true,
-      position: 4,
-      showcaseSection: "loop",
-    },
-    {
-      id: "5",
-      title: "Trade Relations Strengthen Between ASEAN and EU",
-      date: "2025-09-20",
-      displayDate: "September 20, 2025",
-      summary:
-        "New bilateral agreements worth $15B signed during high-level diplomatic meetings, focusing on sustainable trade practices.",
-      category: "Global Economy",
-      content:
-        "<h2>Diplomatic Success</h2><p>High-level negotiations between ASEAN representatives and European Union officials have resulted in groundbreaking trade agreements worth $15 billion.</p><p>The agreements emphasize sustainable trade practices, digital commerce facilitation, and mutual investment protection.</p>",
-      tags: ["Global Economy", "Policy", "Business"],
-      image: "https://via.placeholder.com/600x400",
-      views: 5670,
-      author: {
-        name: "Michael Torres",
-        role: "International Affairs Correspondent",
-        avatar: "https://via.placeholder.com/40x40",
-      },
-      isVisible: true,
-      position: 5,
-      showcaseSection: "loop",
-    },
-  ],
+  news: [],
   availableTags: [
     { name: "Technology", color: "blue" },
     { name: "AI & ML", color: "purple" },
@@ -526,31 +477,31 @@ __seedCMS({
     {
       id: 1,
       quote:
-        "Western Star's insights have been instrumental in helping us navigate complex market dynamics. Their analysis is always spot-on and actionable.",
+        "Western Star's insights have been instrumental in helping us navigate complex market dynamics. Their analysis is always spot-on.[dummy]",
       author: "Sarah Chen",
       role: "Chief Strategy Officer",
       company: "TechVentures Inc.",
-      avatar: "https://via.placeholder.com/60x60",
+      avatar: "https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmVtYWxlJTIwYXZhdGFyfGVufDB8fDB8fHww",
       isActive: true,
     },
     {
       id: 2,
       quote:
-        "The depth of research and quality of analysis from Western Star is unmatched. It's become essential reading for our executive team.",
+        "The depth of research and quality of analysis from Western Star is unmatched. It's become essential reading for our executive team.[dummy]",
       author: "Michael Rodriguez",
       role: "Managing Director",
       company: "Global Capital Partners",
-      avatar: "https://via.placeholder.com/60x60",
+      avatar: "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww",
       isActive: true,
     },
     {
       id: 3,
       quote:
-        "Western Star provides the strategic intelligence we need to stay ahead of market trends. Their insights consistently deliver value.",
+        "Western Star provides the strategic intelligence we need to stay ahead of market trends. Their insights consistently deliver value.[dummy]",
       author: "Emily Johnson",
       role: "Head of Research",
       company: "Innovation Labs",
-      avatar: "https://via.placeholder.com/60x60",
+      avatar: "https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
       isActive: true,
     },
   ],

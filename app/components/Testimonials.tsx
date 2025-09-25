@@ -6,6 +6,13 @@ export function Testimonials() {
   const [testimonials, setTestimonials] = useState<TestimonialData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [metrics, setMetrics] = useState({
+    card: 384, // fallback card width
+    gap: 32, // fallback gap (Tailwind gap-8)
+    container: 0,
+    visible: 1,
+    max: 0,
+  });
 
   useEffect(() => {
     // Load testimonials data async
@@ -64,8 +71,7 @@ export function Testimonials() {
 
   // Calculate derived values
   const quotes = testimonials.filter((item) => item.isActive);
-  const cardWidth = 400; // Approximate width of each card including gap
-  const visibleCards = Math.min(2, quotes.length);
+  const visibleCards = metrics.visible;
   const maxIndex = Math.max(0, quotes.length - visibleCards);
 
   const scroll = (direction: "left" | "right") => {
@@ -78,8 +84,7 @@ export function Testimonials() {
 
   const scrollToIndex = (index: number) => {
     if (scrollRef.current) {
-      const cardWidth = 400;
-      const scrollLeft = index * cardWidth;
+      const scrollLeft = index * (metrics.card + metrics.gap);
       scrollRef.current.scrollTo({ left: scrollLeft, behavior: "smooth" });
       setCurrentIndex(index);
     }
@@ -90,6 +95,31 @@ export function Testimonials() {
       scrollToIndex(currentIndex);
     }
   }, [currentIndex, quotes.length]);
+
+  // Measure card width, gap and container to avoid cropping and compute visible cards
+  useEffect(() => {
+    const measure = () => {
+      if (!scrollRef.current) return;
+      const el = scrollRef.current;
+      const style = getComputedStyle(el);
+      const gap = parseFloat(style.columnGap || style.gap) || 0;
+      // Find first card element
+      const cardEl = el.querySelector('[data-t-card="true"]') as HTMLElement | null;
+      const card = cardEl?.offsetWidth ?? 384;
+      const container = el.offsetWidth;
+      const visible = Math.max(1, Math.floor((container + gap) / (card + gap)));
+      const max = Math.max(0, quotes.length - visible);
+      setMetrics({ card, gap, container, visible, max });
+      // Clamp current index if overflow
+      if (currentIndex > max) {
+        setCurrentIndex(max);
+      }
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [quotes.length]);
 
   // Early returns AFTER all hooks
   if (testimonials.length === 0) {
@@ -162,49 +192,55 @@ export function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
+  {/* Testimonials Carousel */}
         <div className="relative">
           {/* Navigation Buttons */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-6">
+          <div className="absolute -left-3 md:-left-6 top-1/2 -translate-y-1/2 z-10">
             <button
               onClick={() => scroll("left")}
               disabled={currentIndex === 0}
-              className="w-12 h-12 bg-white border border-slate-200 rounded-xl flex items-center justify-center hover:border-slate-300 hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
+              className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur border border-slate-200 rounded-xl flex items-center justify-center hover:border-slate-300 hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
             >
               <ChevronLeft className="w-5 h-5 text-slate-600" />
             </button>
           </div>
 
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-6">
+          <div className="absolute -right-3 md:-right-6 top-1/2 -translate-y-1/2 z-10">
             <button
               onClick={() => scroll("right")}
               disabled={currentIndex >= maxIndex}
-              className="w-12 h-12 bg-white border border-slate-200 rounded-xl flex items-center justify-center hover:border-slate-300 hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
+              className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur border border-slate-200 rounded-xl flex items-center justify-center hover:border-slate-300 hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
             >
               <ChevronRight className="w-5 h-5 text-slate-600" />
             </button>
           </div>
 
           {/* Testimonials Container */}
-          <div className="overflow-hidden">
+          <div className="overflow-visible">
             <div
               ref={scrollRef}
-              className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+              className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-6 px-6 md:px-8"
               style={{
                 scrollSnapType: "x mandatory",
                 scrollBehavior: "smooth",
+                scrollPaddingLeft: "2rem",
+                scrollPaddingRight: "2rem",
               }}
             >
               {quotes.map((testimonial) => (
-                <div key={testimonial.id} className="flex-none w-96 snap-start">
+                <div
+                  key={testimonial.id}
+                  data-t-card="true"
+                  className="flex-none w-[88%] sm:w-80 md:w-96 snap-start"
+                >
                   <div className="bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-500 h-full relative flex flex-col min-h-[22rem]">
                     {/* Quote Icon */}
-                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center">
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center shadow-sm">
                       <Quote className="w-4 h-4 text-white" />
                     </div>
 
                     {/* Quote Text */}
-                    <blockquote className="text-[15px] md:text-base text-slate-700 mb-6 leading-relaxed flex-1">
+                    <blockquote className="text-[15px] md:text-base text-slate-700 mb-6 leading-relaxed flex-1 pt-6 pl-12 md:pl-14">
                       "{testimonial.quote}"
                     </blockquote>
 
@@ -243,7 +279,7 @@ export function Testimonials() {
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-12">
+          <div className="flex justify-center gap-2 mt-10 md:mt-12">
             {quotes.length > visibleCards &&
               Array.from({
                 length: Math.max(1, quotes.length - visibleCards + 1),
@@ -269,7 +305,9 @@ export function Testimonials() {
                 <Users className="w-10 h-10 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-4xl font-bold text-gray-900 leading-none mb-1">10,000+</div>
+                <div className="text-4xl font-bold text-gray-900 leading-none mb-1">
+                  10,000+
+                </div>
                 <div className="text-gray-600 font-medium text-sm tracking-wide uppercase">
                   Trusted Professionals
                 </div>
@@ -279,7 +317,8 @@ export function Testimonials() {
               Join Our Community of Decision Makers
             </h3>
             <p className="text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Connect with industry leaders who rely on our insights for strategic advantage.
+              Connect with industry leaders who rely on our insights for
+              strategic advantage.
             </p>
             <a
               href="https://westernstar.beehiiv.com/"
